@@ -11,8 +11,8 @@ static const char dmenufont[]       = "-*-source code pro semibold-*-*-*-*-*-*-*
 static const char col_gray1[]       = "#200000"; /* text bg color */
 static const char col_gray2[]       = "#444444"; 
 static const char col_gray3[]       = "#dddddd"; /* text color */
-static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#008066"; /* bar and border color  */
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#200000"; /* bar and border color  */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -28,8 +28,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title                tags mask     iscentered   isfloating   monitor */
-   { "Gimp",         NULL,       NULL,                     0,            0,           1,           -1 },
-   { "Firefox",      NULL,       NULL,                     1 << 8,       0,           0,           -1 },
+	{ "Gimp",         NULL,       NULL,                     0,            0,           1,           -1 },
+	{ "Firefox",      NULL,       NULL,                     1 << 8,       0,           0,           -1 },
    { "Discord",      NULL,       NULL,                     0,            1,           1,           -1 },
    { "mpv",          NULL,       NULL,                     0,            1,           1,           -1 },
    { NULL,           NULL,       "Picture-in-Picture",     0,            1,           1,           -1 },
@@ -38,7 +38,6 @@ static const Rule rules[] = {
    { NULL,           NULL,       "nmtui",                  0,            1,           1,           -1 },
    { "Lutris",       NULL,       NULL,                     0,            1,           1,           -1 },
    { NULL,           NULL,       "pulsemixer",             0,            1,           1,           -1 },
-   { "sxiv",         NULL,       NULL,                     0,            1,           1,           -1 },
 };
 
 /* layout(s) */
