@@ -63,4 +63,5 @@ package() {
    make DESTDIR="${pkgdir}" PREFIX="/usr" install
    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
    install -Dm644 README "${pkgdir}/usr/share/doc/${_pkgname}/README"
+   make clean
 }
