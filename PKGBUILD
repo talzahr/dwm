@@ -1,6 +1,6 @@
 # Maintainer: Talzahr <echo 'a3JvemFyZXFAZ21haWwuY29tCg==' | base64 -d>
 pkgname=dwm-talzahr
-pkgver=6.2.r13.4b0114d
+pkgver=6.2.r14.5ace419
 pkgrel=2
 pkgdesc="Talzahr's custom patched DWM by Suckless.org"
 arch=('x86_64')
@@ -35,7 +35,7 @@ _pkgname=dwm
 
 pkgver() {
    cd "${srcdir}"
-   local _dwmver=$(awk '/VERSION =/ {print $3}' < config.mk)
+   local _dwmver=$(awk '/VERSION \=/ {print $3}' < config.mk)
    echo "${_dwmver}.r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
 }
 
