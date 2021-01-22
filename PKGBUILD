@@ -1,6 +1,6 @@
 # Maintainer: Talzahr <echo 'a3JvemFyZXFAZ21haWwuY29tCg==' | base64 -d>
 pkgname=dwm-talzahr
-pkgver=6.2.r15.aac8ba9
+pkgver=6.2.r16.de7d16d
 pkgrel=2
 pkgdesc="Talzahr's custom patched DWM by Suckless.org"
 arch=('x86_64')
@@ -19,8 +19,10 @@ source=('config.def.h'
         'Makefile'
         'transient.c'
         'util.c'
-        'util.h')
+        'util.h'
+        'README')
 sha256sums=('SKIP'
+            'SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
@@ -46,6 +48,7 @@ build() {
 
 package() {
    cd "${srcdir}"
-   make DESTDIR="${pkgdir}" PREFIX=/usr install
+   make DESTDIR="${pkgdir}" PREFIX="/usr" install
    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
+   install -Dm644 README "${pkgdir}/usr/share/doc/${_pkgname}/README"
 }
