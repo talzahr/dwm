@@ -1,7 +1,7 @@
 pkgbase = dwm-talzahr
 	pkgdesc = Talzahr's custom patched DWM by Suckless.org
-	pkgver = 6.2.r16.de7d16d
-	pkgrel = 2
+	pkgver = 6.2.r17.35ca59a
+	pkgrel = 1
 	url = https://github.com/talzahr/dwm
 	arch = x86_64
 	license = MIT

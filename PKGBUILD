@@ -1,7 +1,7 @@
 # Maintainer: Talzahr <echo 'a3JvemFyZXFAZ21haWwuY29tCg==' | base64 -d>
 pkgname=dwm-talzahr
-pkgver=6.2.r16.de7d16d
-pkgrel=2
+pkgver=6.2.r17.35ca59a
+pkgrel=1
 pkgdesc="Talzahr's custom patched DWM by Suckless.org"
 arch=('x86_64')
 url="https://github.com/talzahr/dwm"
@@ -43,7 +43,19 @@ pkgver() {
 
 build() {
    cd "${srcdir}"
-   make clean
+   make
+}
+
+check() {
+   if [[ -e /usr/local/bin/dwm ]]; then
+     cat <<EOF
+
+Fatal: file 'dwm' already exists in /usr/local/bin!
+       Remove or rename it to avoid conflict with the binary to be installed in /usr/bin.
+       This was likely caused by a manual installation of dwm. Exiting.
+EOF
+      exit 1
+   fi
 }
 
 package() {
