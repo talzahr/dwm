@@ -1,13 +1,13 @@
 # Maintainer: Talzahr <echo 'a3JvemFyZXFAZ21haWwuY29tCg==' | base64 -d>
 pkgname=dwm-talzahr
-pkgver=6.2.r14.5ace419
+pkgver=6.2.r15.aac8ba9
 pkgrel=2
 pkgdesc="Talzahr's custom patched DWM by Suckless.org"
 arch=('x86_64')
 url="https://github.com/talzahr/dwm"
 license=('MIT')
 depends=('libx11' 'libxinerama' 'libxft')
-makedepends=('git')
+makedepends=('git' 'awk')
 conflicts=('dwm')
 source=('config.def.h'
         'config.mk'
@@ -35,7 +35,7 @@ _pkgname=dwm
 
 pkgver() {
    cd "${srcdir}"
-   local _dwmver=$(awk '/VERSION \=/ {print $3}' < config.mk)
+   local _dwmver=$(awk '/VERSION =/ {print $3}' < config.mk)
    echo "${_dwmver}.r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
 }
 
